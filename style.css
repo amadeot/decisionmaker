@@ -1,0 +1,12 @@
+#app {
+	padding: 25px;
+	margin-top: 25px;
+}
+.btn-container{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+button.btn {
+	margin: 5px;
+}

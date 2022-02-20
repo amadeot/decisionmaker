@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dinner Decider</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div>
+			<h1>Options</h1>
+			<div class="row btn-container">
+				<button type="button" disabled="true" v-for="option in options" v-html="option"></button>
+			</div>
+		</div>
+		<div>
+			<input name="newOption" v-model="newOption" v-on:keyup.enter="addOption()">
+		</div>
+		<div>
+			<button type="button" @click="addOption()">add option</button>
+			<button type="button" @click="chooseOption()">choose option</button>			
+		</div>
+		<div v-if="selectedOption">
+			<h1>You have decided on: <span v-html="selectedOption"></span></p>
+		</div>
+	</div>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
